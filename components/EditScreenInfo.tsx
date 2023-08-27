@@ -12,8 +12,9 @@ export default function EditScreenInfo({ path }: { path: string }) {
   function handleSubmit() {
     if(email === 'gabriel@mail.com' && password === '123') {
       setIsValid(true);
-    }
+    }else {
     Alert.alert('user or password invalid!')
+    }
   }
   return (
     <View style={{ width: '100%' }}>
@@ -33,7 +34,7 @@ export default function EditScreenInfo({ path }: { path: string }) {
       </View>
       {isValid &&
         <View style={{width: '100%', alignItems: 'center', marginVertical: 20}}>
-          <Text style={{color: 'green'}}>Acesso liberado!</Text>
+          <Text style={{color: 'green'}} testID='valid-text'>Acesso liberado!</Text>
         </View>
       }
     </View>

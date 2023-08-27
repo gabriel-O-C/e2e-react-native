@@ -4,9 +4,10 @@ env:
     PASSWORD: "123"
 ---
 - tapOn: "E-mail"
-- eraseText
+-  eraseText
 - inputText: ${USERNAME} 
 - tapOn: "Password"
 - inputText: ${PASSWORD}
 - tapOn: "Login"
-- assertVisible: "Acesso liberado!"
+- assertVisible: 
+    id: "valid-text"
