@@ -1,26 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, TextInput } from 'react-native';
 import { Text, View } from './Themed';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 export default function EditScreenInfo({ path }: { path: string }) {
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [isValid, setIsValid] = useState(false);
+
+  function handleSubmit() {
+    if(email === 'gabriel@mail.com' && password === '123') {
+      setIsValid(true);
+    }
+    return null
+  }
   return (
     <View style={{ width: '100%' }}>
       <View style={{ alignItems: 'center' }}>
-        <TextInput style={styles.input} placeholder='E-mail' />
+        <TextInput style={styles.input} placeholder='E-mail' value={email} onChangeText={(value) => setEmail(value)} />
       </View>
       <View style={{ alignItems: 'center' }} >
-        <TextInput style={styles.input} placeholder='Password' secureTextEntry />
+        <TextInput style={styles.input} placeholder='Password' secureTextEntry value={password} onChangeText={(value) => setPassword(value)} />
       </View>
 
       <View>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={handleSubmit}>
           <Text style={{ color: 'white', textAlign: 'center' }}>
             Login
           </Text>
         </TouchableOpacity>
       </View>
+      {isValid &&
+        <View style={{width: '100%', alignItems: 'center', marginVertical: 20}}>
+          <Text style={{color: 'green'}}>Acesso liberado!</Text>
+        </View>
+      }
     </View>
   );
 }
