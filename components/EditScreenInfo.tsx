@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, TextInput } from 'react-native';
+import { Alert, StyleSheet, TextInput } from 'react-native';
 import { Text, View } from './Themed';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
@@ -13,7 +13,7 @@ export default function EditScreenInfo({ path }: { path: string }) {
     if(email === 'gabriel@mail.com' && password === '123') {
       setIsValid(true);
     }
-    return null
+    Alert.alert('user or password invalid!')
   }
   return (
     <View style={{ width: '100%' }}>

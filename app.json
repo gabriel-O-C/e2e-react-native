@@ -17,13 +17,13 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.gabriel.e2e-testing"
+      "bundleIdentifier": "com.gabriel.e2e"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff",
-        "package": "com.gabriel.e2e-testing",
+        "package": "com.gabriel.e2e",
       }
     },
     "web": {

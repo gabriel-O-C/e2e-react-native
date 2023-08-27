@@ -1,0 +1,14 @@
+appId: com.gabriel.e2e-testing
+---
+- tapOn:
+    id: "Expo Go"
+- tapOn: "e2e-react-native"
+- tapOn: "E-mail"
+- inputText: inputRandomEmail
+- tapOn: "Password"
+- inputText: "123"
+- tapOn: "Login"
+- assertVisible: "user or password invalid!"
+- tapOn: "OK"
+- runFlow: 
+    file: sign-in-workflow-success.yaml

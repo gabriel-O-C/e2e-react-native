@@ -1,0 +1,12 @@
+appId: com.gabriel.e2e
+env:
+    USERNAME: "gabriel@mail.com"
+    PASSWORD: "123"
+---
+- tapOn: "E-mail"
+- eraseText
+- inputText: ${USERNAME} 
+- tapOn: "Password"
+- inputText: ${PASSWORD}
+- tapOn: "Login"
+- assertVisible: "Acesso liberado!"
